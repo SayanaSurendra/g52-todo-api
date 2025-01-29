@@ -13,7 +13,7 @@ import lombok.*;
 @EqualsAndHashCode
 
 @Entity
-public class Role { // TODO Implement Comparable interface
+public class Role implements Comparable<Role>{ // TODO Implement Comparable interface
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,4 +24,8 @@ public class Role { // TODO Implement Comparable interface
     @Column(nullable = false ,unique = true)
     private String name;
 
+    @Override
+    public int compareTo(Role r) {
+        return this.id.compareTo(r.getId());
+    }
 }
