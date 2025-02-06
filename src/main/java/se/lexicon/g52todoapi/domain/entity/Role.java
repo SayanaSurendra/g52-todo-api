@@ -11,7 +11,7 @@ import lombok.*;
 @RequiredArgsConstructor
 @ToString
 @EqualsAndHashCode
-
+@Builder
 @Entity
 public class Role implements Comparable<Role>{ // TODO Implement Comparable interface
 

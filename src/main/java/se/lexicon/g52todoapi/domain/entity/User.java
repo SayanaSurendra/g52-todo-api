@@ -13,7 +13,7 @@ import java.util.TreeSet;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode(exclude = "roles")
-
+@Builder
 @Entity
 public class User {
 
@@ -55,6 +55,7 @@ public class User {
             roles.remove(role);
         }else{
             //Todo: throw exceptions if needed
+            throw new IllegalArgumentException(role +"is not in roles");
         }
 
     }
